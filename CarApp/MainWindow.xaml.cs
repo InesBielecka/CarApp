@@ -87,6 +87,7 @@ namespace CarApp
                     BodyColourComboBox.Items.Add(reader[0]);
                 }
             }
+
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
