@@ -101,7 +101,7 @@ namespace CarApp
                 addcmd.Parameters.AddWithValue("@ProductionYear", ProductionYearComboBox.Text);
                 addcmd.Parameters.AddWithValue("@Mileage", MileageTextBox.Text);
                 addcmd.Parameters.AddWithValue("@Engine", float.Parse(EngineCapacityComboBox.Text));
-                addcmd.Parameters.AddWithValue("@BodyColour", BodyColourComboBox.Text);
+                addcmd.Parameters.AddWithValue("@BodyColour", BodyColourComboBox.Text); 
                 addcmd.Parameters.AddWithValue("@AC", ACCheckBox.IsChecked);
                 addcmd.Parameters.AddWithValue("@Radio", RadioCheckBox.IsChecked);
                 addcmd.Parameters.AddWithValue("@CentralLock", CentralLockCheckBox.IsChecked);
