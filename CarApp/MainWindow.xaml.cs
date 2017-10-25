@@ -33,7 +33,7 @@ namespace CarApp
 
         }
 
-       private void FillBrandNameComboBox()
+        private void FillBrandNameComboBox()
         {
             string ConString = ConfigurationManager.ConnectionStrings["LocalHost"].ConnectionString;
             using (SqlConnection con = new SqlConnection(ConString))
@@ -51,7 +51,7 @@ namespace CarApp
 
         private void FillProductionYearComboBox()
         {
-            for (int year = 1980; year <= DateTime.Now.Year; year ++ )
+            for (int year = 1980; year <= DateTime.Now.Year; year++)
             {
                 ProductionYearComboBox.Items.Add(year);
             }
@@ -101,13 +101,13 @@ namespace CarApp
                 addcmd.Parameters.AddWithValue("@ProductionYear", ProductionYearComboBox.Text);
                 addcmd.Parameters.AddWithValue("@Mileage", MileageTextBox.Text);
                 addcmd.Parameters.AddWithValue("@Engine", float.Parse(EngineCapacityComboBox.Text));
-                addcmd.Parameters.AddWithValue("@BodyColour", BodyColourComboBox.Text); 
+                addcmd.Parameters.AddWithValue("@BodyColour", BodyColourComboBox.Text);
                 addcmd.Parameters.AddWithValue("@AC", ACCheckBox.IsChecked);
                 addcmd.Parameters.AddWithValue("@Radio", RadioCheckBox.IsChecked);
                 addcmd.Parameters.AddWithValue("@CentralLock", CentralLockCheckBox.IsChecked);
                 addcmd.Parameters.AddWithValue("@ElectronicWindows", ElectronicWindowsCheckBox.IsChecked);
 
-                    SqlParameter IDParameter = new SqlParameter();
+                SqlParameter IDParameter = new SqlParameter();
                 IDParameter.ParameterName = "@ID";
                 IDParameter.SqlDbType = System.Data.SqlDbType.Int;
                 IDParameter.Direction = System.Data.ParameterDirection.Output;
@@ -116,7 +116,7 @@ namespace CarApp
                 con.Open();
                 addcmd.ExecuteNonQuery();
 
-                
+
             }
             messagelbl.Content = "Add car successfully";
         }
@@ -138,7 +138,7 @@ namespace CarApp
 
         private void MileageTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
+
         }
 
         private void CarSearchButton_Click(object sender, RoutedEventArgs e)
