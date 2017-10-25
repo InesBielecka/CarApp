@@ -1,0 +1,26 @@
+﻿<Window x:Class="CarApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="308.036">
+    <Grid Margin="0,0,2,0">
+        <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="213,289,0,0" VerticalAlignment="Top" Width="75" Click="AddButton_Click"/>
+        <CheckBox x:Name="ACCheckBox" Content="Air conditioning" HorizontalAlignment="Left" Margin="37,211,0,0" VerticalAlignment="Top" Checked="ACCheckBox_Checked"/>
+        <CheckBox x:Name="CentralLockCheckBox" Content="Central lock" HorizontalAlignment="Left" Margin="37,238,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="RadioCheckBox" Content="Radio" HorizontalAlignment="Left" Margin="37,267,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ElectronicWindowsCheckBox" Content="Electronic windows" HorizontalAlignment="Left" Margin="37,294,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="BrandNameComboBox" HorizontalAlignment="Left" Margin="38,19,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="BrandNameComboBox_SelectionChanged" ToolTip="Choose brand name" Cursor="Arrow" IsSynchronizedWithCurrentItem="True">
+            <ListBoxItem Content="Brand name"/>
+        </ComboBox>
+        <ComboBox x:Name="BodyColourComboBox" HorizontalAlignment="Left" Margin="38,56,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ProductionYearComboBox" HorizontalAlignment="Left" Margin="38,97,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="EngineCapacityComboBox" HorizontalAlignment="Left" Margin="38,135,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MileageTextBox" HorizontalAlignment="Left" Height="23" Margin="38,174,0,0" TextWrapping="Wrap" Text="Write down mileage of your car." VerticalAlignment="Top" Width="179" GotFocus="Mileage_GotFocus" TextChanged="MileageTextBox_TextChanged"/>
+        <Label x:Name="messagelbl" Content="" HorizontalAlignment="Left" Margin="171,256,0,0" VerticalAlignment="Top" Width="117" Foreground="#FF4AD321"/>
+        <Button x:Name="CarSearchButton" Content="Show all cars" HorizontalAlignment="Left" Margin="213,26,0,0" VerticalAlignment="Top" Width="75" Click="CarSearchButton_Click"/>
+
+    </Grid>
+</Window>
