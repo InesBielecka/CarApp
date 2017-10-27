@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarApp"
         mc:Ignorable="d"
-        Title="CarSearch" Height="300" Width="300">
+        Title="CarSearch" Height="300" Width="658.571">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="71,57,0,0" VerticalAlignment="Top" SelectionChanged="dataGrid_SelectionChanged" Height="111" Width="128"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.524,0.549" Height="217" Width="631"/>
+        <ComboBox x:Name="SortcomboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="SortcomboBox_SelectionChanged" Loaded="SortcomboBox_Loaded"/>
     </Grid>
 </Window>

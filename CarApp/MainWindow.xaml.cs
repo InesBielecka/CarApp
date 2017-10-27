@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace CarApp
 {
@@ -32,7 +33,7 @@ namespace CarApp
             BrandNameComboBox.SelectedIndex = 0;
 
         }
-
+       
         private void FillBrandNameComboBox()
         {
             string ConString = ConfigurationManager.ConnectionStrings["LocalHost"].ConnectionString;
@@ -120,6 +121,24 @@ namespace CarApp
 
             }
             messagelbl.Content = "Add car successfully";
+
+            ClearItems();
+            
+        }
+
+        private void ClearItems()
+        {
+            foreach (Control ctl in controlGrid.Children)
+            {
+                if (ctl.GetType() == typeof(CheckBox))
+                    ((CheckBox)ctl).IsChecked = false;
+                if (ctl.GetType() == typeof(TextBox))
+                    ((TextBox)ctl).Text = String.Empty;
+                if (ctl.GetType() == typeof(ComboBox) && ctl.Name != BrandNameComboBox.Name)
+                    ((ComboBox)ctl).SelectedIndex = -1;
+                if (ctl.Name == BrandNameComboBox.Name)
+                    BrandNameComboBox.SelectedIndex = 0;
+            }
         }
 
         private void ACCheckBox_Checked(object sender, RoutedEventArgs e)
@@ -146,6 +165,12 @@ namespace CarApp
         {
             var searchWindow = new CarSearch();
             searchWindow.Show();
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }
